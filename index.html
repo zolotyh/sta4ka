@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Рефакторинг</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+          <section>
+              <h2>
+                  Рефакторинг в большом проекте. 
+              </h2>
+              <p>
+                  Алексей Золотых, Wrike
+              </p>
+              <aside class="notes">
+                  Не все могут смотреть в завтрашний день
+              </aside>
+          </section>
+				  <section data-background-image="/img/2.jpg" data-background-color="#322F26">
+              <aside class="notes">
+                  Рудольф Клаузиус 
+              </aside>
+          </section>
+				  <section>
+              <h3>
+                  Рудольф Клаузиус 
+              </h3>
+              <p>
+                  1822 &mdash; 1888
+              </p>
+          </section>
+				  <section>
+              <h3 class="fragment1" data-fragment-index="0">
+                  Второе начало термодинамики
+              </h3>
+              <p class="fragment" data-fragment-index="1">Закон неубывания энтропии</p>
+          </section>
+          <section>
+              Если в некоторый момент времени замкнутая система находится в неравновесном макроскопическом состоянии, то в последующие моменты времени наиболее вероятным следствием будет монотонное возрастание её энтропии.
+          </section>
+          <section data-background-image="/img/3.gif" data-background-color="#322F26" >
+          </section>
+
+          <section>
+              Если не наводить порядок в коде, то код будет запутываться
+          </section>
+          <section  data-background-video="/img/3.mp4"></section>
+          <section>
+              <b>Рефа́кторинг</b> &mdash; процесс изменения внутренней структуры программы, не затрагивающий её внешнего поведения и имеющий целью облегчить понимание её работы.
+          </section>
+          <section>
+              JavaScript рефакторится хуже и приходит к хаосу быстрее чем Java
+              <aside class="notes">
+                  <p>
+                      Не все методы подходят. Спаает Dart и TypeScript
+                  </p>
+              </aside>
+          </section>
+          <section>
+              <h2>
+              принцип КИДАО
+              </h2>
+          </section>
+          <section id="smart">
+              <style>
+               #smart p {
+                   text-align: left;
+               }
+              </style>
+              <h2>
+                  принцип <strike>КИДАО</strike> SMART
+              </h2>
+              <p >S &mdash; Specific (Конкретный)</p>
+              <p >M &mdash; Measurable (Измеримый)</p>
+              <p >A &mdash; Attainable, Achievable (Достижимый)</p>
+              <p >R &mdash; Relevant (Актуальный)</p>
+              <p >T &mdash; Time-bound (Ограниченный во времени)</p>
+          </section>
+          <section>
+              <h2>Чем чаще, тем меньше проблем</h2>
+              <ul>
+                  <li class="fragment">Меньше изменений &mdash; меньше ошибок</li>
+                  <li class="fragment">Вы всегда в контексте</li>
+                  <li class="fragment">Отделу тестирования не нужно тратить много времени</li>
+                  <li class="fragment">Начальство не заметит подвоха</li>
+              </ul>
+          </section>
+          <section>
+              <img alt="" src="/img/5.jpg"/>
+          </section>
+          <section>
+              Как быть, если нужен большой рефакторинг?
+          </section>
+          <section>
+              <h2>Как я узнал про большой рефакторинг</h2>
+              <ul>
+                  <li class="fragment">
+                      2 000 000 строк кода
+                  </li>
+                  <li class="fragment">
+                       Измененные библиотеки под VCS
+                  </li>
+                  <li class="fragment">
+                      30+ разработчиков, которые постоянно пишут фичи
+                  </li>
+                  <li class="fragment">
+                      В коде много глобальных переменных
+                  </li>
+              </ul>
+          </section>
+          <section>
+              &mdash; Большой рефакторинг можно заменить на маленький
+          </section>
+          <section>
+              <h2>Принцип туриста</h2>
+              <p class="fragment" data-fragment-index="0">полянку нужно оставить чище, чем она была</p>
+          </section>
+          <section>
+              &mdash; Давайте договоримся приводить в порядок код постепенно!
+          </section>
+          <section>
+              &mdash; Будем выделять на это 10% времени и рефакторить
+          </section>
+          <section data-background-image="/img/4.gif" data-background-color="#322F26" >
+              <aside class="notes">
+                  <p>
+                      Обязательно найдется разработчик, который забьет на рефакторинг первым
+                  </p>
+                  <p>
+                      Если поставить linter и падать при каждой ошибки - получится АД
+                  </p>
+              </aside>
+          </section>
+          <section>
+              <h2>Решение</h2>
+              <p class="fragment">
+                  Медленный рефакторинг и добрые туристы по принуждению!
+              </p>
+          </section>
+          <section >
+              <h4>Git hooks + статический анализ кода</h4>
+              <img alt="" src="/img/8.png" style="border: none; box-shadow: none"/>
+              <aside class="notes">
+                  <p>
+                      git hooks + jshint + gulp
+                  </p>
+              </aside>
+          </section>
+          <section>
+              Через полгода кодовую базу будет не узнать
+          </section>
+
+          <section id="tourist-fail" data-background-video="/img/4.mp4" >
+              <style>
+               #tourist-fail p{
+                   background: rgba(255,255,255,0.6);
+                   padding: 1em;
+               }
+              </style>
+
+              <p class="fragment">
+                  &mdash; Нет времени объяснять...
+              </p>
+              <p class="fragment">
+                  &mdash; Нужен коммит
+              </p>
+              <aside class="notes">
+                  А что если постепенный рефакторинг не помогает
+              </aside>
+          </section>
+          <section>
+              <h2>Что еще?</h2>
+              <ul>
+                  <li class="fragment">Переписывание по частям</li>
+                  <li class="fragment">Переписывание приложения полностью</li>
+              </ul>
+          </section>
+          <section>
+              <h2>Два подхода к рефакторингу</h2>
+              <ol>
+                  <li class="fragment">Код как текст</li>
+                  <li class="fragment">Код как код</li>
+              </ol>
+          </section>
+          <section>
+              <h2>Поиск, консоль и регулярные выражения</h2>
+              <ul>
+                  <li class="fragment">Работа с путями</li>
+                  <li class="fragment">Работа со стилями</li>
+                  <li class="fragment">Небольшие изменения в коде</li>
+              </ul>
+          </section>
+          <section>
+              <h2>Поиск и замена в IDE</h2>
+              <img alt="" src="/img/10.png" />
+          </section>
+          <section>
+              <h2>Поиск и замена в IDE</h2>
+              <img alt="" src="/img/9.png" />
+          </section>
+          <section>
+              <h2>Консоль</h2>
+              <p>
+                  awk, sed, rm, mv, touch, ag, grep, ack, cat, pbcopy, pbpaste...
+              </p>
+              <pre><code data-trim data-noescape>
+#!/bin/bash
+
+
+STATIC_HOST="http://example.com"
+sed -i '' "s|url(\([^)]*\)|url($STATIC_HOST\1|g" style.css
+              </code></pre>
+          </section>
+          <section>
+                <h2>Есть проблемы</h2>
+              <pre><code data-trim data-noescape>
+...
+background-image : url(/image/test.png);
+background-image : url("/image/test.png");
+background-image : url('/image/test.png');
+...
+              </code></pre>
+              <p class="fragment">
+                  Нужно предусмотреть все варианты
+              </p>
+          </section>
+          <section>
+              <h2>
+                  Используйте статические анализаторы
+              </h2>
+              <p class="fragment">
+                  Единообразный код проще рефакторить
+              </p>
+              <p class="fragment" >
+                  eslint, jshint, csslint и еще много много других
+              </p>
+          </section>
+          <section>
+              <h2>Отладчик регулярных выражений</h2>
+              <img alt="" src="/img/11.png"/>
+          </section>
+          <section>
+              <h2>Встроенные средства для рефакторинга</h2>
+              <ul>
+                  <li class="fragment">Переименование</li>
+                  <li class="fragment">Перетаскивание мышкой файлов и папок</li>
+                  <li class="fragment">Выделение методов</li>
+              </ul>
+              <p class="fragment">
+                  Чем круче ваша IDE, тем дольше ждать результата
+              </p>
+          </section>
+          <section  data-background-video="/img/ide.mp4"></section>
+          <section>
+              <h2>
+                  Рефакторинг на основе AST
+              </h2>
+              <p class="fragment">(Абстрактное синтаксическое дерево)</p>
+          </section>
+          <section>
+              Абстрактное синтаксическое дерево (АСД) — в информатике конечное, помеченное, ориентированное дерево, в котором внутренние вершины сопоставлены (помечены) с операторами языка программирования, а листья — с соответствующими операндами.
+          </section>
+          <section>
+              <h2>grasp</h2>
+              <p>
+                  npm install -g grasp
+              </p>
+              <p>
+                  <a href="http://www.graspjs.com/">http://www.graspjs.com/</a>
+              </p>
+          </section>
+          <section>
+              <h3>
+              CSS подобный синтаксис
+              </h3>
+              <pre class="fragment"><code data-trim data-noescape>
+$ grasp 'if.test[op=&&]' a.js
+
+  2:   if (x && f(x)) { return x; }
+  5:   if (xs.length && ys.length) {
+  10:  if (x == 3 && list[x]) {
+              </code></pre>
+              <h3 class="fragment">
+                  Поиск по шаблонам
+              </h3>
+              <pre class="fragment"><code data-trim data-noescape>
+$ grasp -e 'return __ + __' b.js
+
+  3:  if (x < 2) { return x + 2; }
+  13:      return '>>' + str.slice(2);
+  15:  return f(z) + x;
+              </code></pre>
+          </section>
+          <section>
+              <h2>Рефакторинг</h2>
+              <pre class="fragment"><code data-trim data-noescape>
+$ cat c.js
+ 
+  f(x < y, x == z);
+
+$ grasp bi --replace '{{.r}}+{{.l}}' c.js
+
+  f(y+x, z+x);
+              </code></pre>
+              <p class="fragment">
+                  Есть  API
+              </p>
+              <pre class="fragment"><code data-trim data-noescape>
+var grasp = require('grasp');
+
+var replacer = grasp
+              .replace('equery', '__ + __', '{{.l}} - {{.r}}');
+
+var processedCode = replacer(code);
+              </code></pre>
+
+          </section>
+          <section>
+              <h2>jscodeshift</h2>
+              <p>
+                  jscodeshift is a toolkit for running codemods over multiple JS files.
+              </p>
+              <a href="https://github.com/facebook/jscodeshift">https://github.com/facebook/jscodeshift</a>
+          </section>
+          <section>
+              <h2>Codemods</h2>
+              <pre class="fragment"><code data-trim data-noescape>
+/**
+ * This replaces every occurence of variable "foo".
+ */
+module.exports = function(fileInfo, api) {
+  return api.jscodeshift(fileInfo.source)
+    .findVariableDeclarators('foo')
+    .renameTo('bar')
+    .toSource();
+}
+              </code></pre>
+          </section>
+          <section>
+              <h2>Готовый сборник рецептов</h2>
+              <p>
+              <a href="https://github.com/cpojer/js-codemo">https://github.com/cpojer/js-codemod</a>
+              </p>
+              <ul class="fragment">
+                  <li>var в const или let.</li>
+                  <li>Обратные вызовы в cтрелочные функции</li>
+                  <li>Строки в шаблоны</li>
+              </ul>
+          </section>
+          <section>
+              Стили тоже можно рефакторить в AST режиме
+          </section>
+          <section>
+              <h2>POSTCSS + plugins</h2>
+              <ul>
+                  <li class="fragment">Убрать дублирование стилей</li>
+                  <li class="fragment">Уменьшить разброс цветов</li>
+                  <li class="fragment">Убрать префиксы</li>
+                  <li class="fragment">Выделить новые переменные</li>
+              </ul>
+          </section>
+          <section  data-background-video="/img/panic.mp4"></section>
+          <section>
+              <h2>Мердж изменений &mdash; очень больно</h2>
+          </section>
+          <section>
+              <h2>Gulp</h2>
+              <pre class="fragment"><code data-trim data-noescape>
+gulp.task('refactor', function () {
+  return gulp.src('folder/**/*.js') // Нужные файлы для рефакторинга
+    .pipe(RefactoringPlugin()) // Рефакторим код
+    .pipe(gulp.dest('./')) // Кладем на место
+})
+              </code></pre>
+          </section>
+          <section>
+              <p>
+                  Если что-то пошло не так, то
+              <pre class="fragment"><code data-trim data-noescape>
+$ git reset --hard
+$ git merge origin/master
+# Правим код миграции
+$ gulp refactor
+              </code></pre>
+              </p>
+          </section>
+          <section  data-background-video="/img/haha.mp4"></section>
+          <section>
+              Спасибо за внимание!
+          </section>
+      </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
