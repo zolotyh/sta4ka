@@ -35,12 +35,12 @@
                   Не все могут смотреть в завтрашний день
               </aside>
           </section>
-				  <section data-background-image="img/2.jpg" data-background-color="#322F26">
+					<section data-background-image="img/2.jpg" data-background-color="#322F26">
               <aside class="notes">
                   Рудольф Клаузиус 
               </aside>
           </section>
-				  <section>
+					<section>
               <h3>
                   Рудольф Клаузиус 
               </h3>
@@ -48,7 +48,7 @@
                   1822 &mdash; 1888
               </p>
           </section>
-				  <section>
+					<section>
               <h3 class="fragment1" data-fragment-index="0">
                   Второе начало термодинамики
               </h3>
@@ -65,15 +65,7 @@
           </section>
           <section  data-background-video="img/3.mp4"></section>
           <section>
-              <b>Рефа́кторинг</b> &mdash; процесс изменения внутренней структуры программы, не затрагивающий её внешнего поведения и имеющий целью облегчить понимание её работы.
-          </section>
-          <section>
-              JavaScript рефакторится хуже и приходит к хаосу быстрее чем Java
-              <aside class="notes">
-                  <p>
-                      Не все методы подходят. Спаает Dart и TypeScript
-                  </p>
-              </aside>
+              <b>Рефа́кторинг</b> &mdash; процесс изменения внутренней структуры программы, <b>не затрагивающий её внешнего поведения </b> и имеющий целью облегчить понимание её работы и также другие бла бла бла, которые никто никогда не читает
           </section>
           <section>
               <h2>
@@ -94,6 +86,29 @@
               <p >A &mdash; Attainable, Achievable (Достижимый)</p>
               <p >R &mdash; Relevant (Актуальный)</p>
               <p >T &mdash; Time-bound (Ограниченный во времени)</p>
+          </section>
+					<section>
+							<h2>Рефакторить фронтенд сложно</h2>
+					</section>
+          <section>
+						<h2>Основные причины</h2>
+						<ul>
+								<li>Минимум 3 контекста:<br>
+										html, css, js <span class="fragment">, less, stylus, typescript, jade, jsx</span>
+								</li>
+								<li class="fragment">Контексты плохо связаны между собой</li>
+						</ul>
+				</section>
+        <section data-background-video="img/csside.mov"></section>
+        <section>
+          <p>Удобно добавлять префикс js- для классов, которые использует javascript</p>
+        </section>
+        <section>
+          <h1>Острожно!</h1>
+          <p>Не стоит все писать на JS!</p>
+        </section>
+          <section>
+            <img src="img/grabli.jpg" alt="">
           </section>
           <section>
               <h2>Чем чаще, тем меньше проблем</h2>
@@ -120,7 +135,7 @@
                        Измененные библиотеки под VCS
                   </li>
                   <li class="fragment">
-                      30+ разработчиков, которые постоянно пишут фичи
+                      Полсотни разработчиков, которые постоянно пишут фичи
                   </li>
                   <li class="fragment">
                       В коде много глобальных переменных
@@ -169,10 +184,10 @@
               Через полгода кодовую базу будет не узнать
           </section>
 
-          <section id="tourist-fail" data-background-video="img/4.mp4" >
+          <section id="tourist-fail" data-background-video="img/css4.mp4" >
               <style>
                #tourist-fail p{
-                   background: rgba(255,255,255,0.6);
+                   background: rgba(255,255,255,0.9);
                    padding: 1em;
                }
               </style>
@@ -188,11 +203,8 @@
               </aside>
           </section>
           <section>
-              <h2>Что еще?</h2>
-              <ul>
-                  <li class="fragment">Переписывание по частям</li>
-                  <li class="fragment">Переписывание приложения полностью</li>
-              </ul>
+            <h2>Рефакторинг, когда поздно пить Боржоми</h2>
+            <img src="img/borjomi_1.jpg" alt="">
           </section>
           <section>
               <h2>Два подхода к рефакторингу</h2>
@@ -210,6 +222,14 @@
               </ul>
           </section>
           <section>
+              <h2>Встроенные средства для рефакторинга</h2>
+              <ul>
+                  <li class="fragment">Поиск и замена</li>
+                  <li class="fragment">Переименование</li>
+                  <li class="fragment">Перетаскивание мышкой файлов и папок</li>
+              </ul>
+          </section>
+          <section>
               <h2>Поиск и замена в IDE</h2>
               <img alt="" src="img/10.png" />
           </section>
@@ -217,6 +237,12 @@
               <h2>Поиск и замена в IDE</h2>
               <img alt="" src="img/9.png" />
           </section>
+          <section id="ide2" data-background-video="img/csside2.mov"></section>
+          <section>
+              <h2>Иногда, в бою, это почти всегда не работает</h2>
+          </section>
+          <section id="ide3" data-background-video="img/csside3.mov"></section>
+          <section  data-background-video="img/ide.mp4"></section>
           <section>
               <h2>Консоль</h2>
               <p>
@@ -244,6 +270,13 @@ background-image : url('/image/test.png');
               </p>
           </section>
           <section>
+              <h2>Отладчик регулярных выражений</h2>
+              <img alt="" src="img/11.png"/>
+          </section>
+          <section>
+            <img src="img/htmlreg.png" alt="">
+          </section>
+          <section>
               <h2>
                   Используйте статические анализаторы
               </h2>
@@ -255,29 +288,35 @@ background-image : url('/image/test.png');
               </p>
           </section>
           <section>
-              <h2>Отладчик регулярных выражений</h2>
-              <img alt="" src="img/11.png"/>
+            <h2>
+            <a href="https://stylelint.io/">stylelint.io</a>
+            </h2>
+            <ul>
+              <li class="frament">Поддержка LESS, SCSS, SASS</li>
+              <li class="frament">Плагины</li>
+            </ul>
+          </section>
+          <section data-background-image="img/idea.png"></section>
+          <section>
+            <h2>Можно положить настройки от IDEA в репо</h2>
+            <p>
+               <a href="https://www.gitignore.io/api/Intellij">https://www.gitignore.io/api/Intellij</a>
+            </p>
+            <p>
+            .idea/inspectionProfiles
+            </p>
           </section>
           <section>
-              <h2>Встроенные средства для рефакторинга</h2>
-              <ul>
-                  <li class="fragment">Переименование</li>
-                  <li class="fragment">Перетаскивание мышкой файлов и папок</li>
-                  <li class="fragment">Выделение методов</li>
-              </ul>
-              <p class="fragment">
-                  Чем круче ваша IDE, тем дольше ждать результата
-              </p>
+            <img src="img/grabli.jpg" alt="">
           </section>
-          <section  data-background-video="img/ide.mp4"></section>
-          <section>
+          <section data-background-image="img/errorscreen.png"> </section>
+
+
+            <section>
               <h2>
                   Рефакторинг на основе AST
               </h2>
               <p class="fragment">(Абстрактное синтаксическое дерево)</p>
-          </section>
-          <section>
-              Абстрактное синтаксическое дерево (АСД) — в информатике конечное, помеченное, ориентированное дерево, в котором внутренние вершины сопоставлены (помечены) с операторами языка программирования, а листья — с соответствующими операндами.
           </section>
           <section>
               <h2>grasp</h2>
@@ -380,6 +419,10 @@ module.exports = function(fileInfo, api) {
           </section>
           <section  data-background-video="img/panic.mp4"></section>
           <section>
+            <img src="img/grabli.jpg" alt="">
+          </section>
+
+          <section>
               <h2>Мердж изменений &mdash; очень больно</h2>
           </section>
           <section>
@@ -403,7 +446,35 @@ $ gulp refactor
               </code></pre>
               </p>
           </section>
-          <section  data-background-video="img/haha.mp4"></section>
+          <section  data-background-video="img/panic.mp4"></section>
+          <section>
+            <img src="img/grabli.jpg" alt="">
+          </section>
+
+          <section>
+            <h2>Баги не всегда очевидны</h2>
+        </section>
+        <section>
+                <img src="img/sc1.png" alt="">
+        </section>
+        <section>
+                <img src="img/sc2.png" alt="">
+        </section>
+        <section>
+                <img src="img/result.png" alt="">
+        </section>
+        <section>
+            <h2>А вы вообще уверены что это баг?!</h2>
+        </section>
+        <section>
+        <p>&mdash; Мы подумали и решили, что красный цвет лучше!</p>
+             <img src="img/cruel.jpg" alt="">
+        </section>
+        <section>
+          <h2>Иногда менеджеры должны знать чем вы занимаетесь</h2>
+        </section>
+        <section  data-background-video="img/haha.mp4"></section>
+
           <section>
               Спасибо за внимание!
           </section>
