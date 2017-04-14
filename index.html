@@ -25,15 +25,35 @@
 		<div class="reveal">
 			<div class="slides">
           <section>
-              <h2>
-                  Рефакторинг в большом проекте. 
-              </h2>
+              <h3>
+                  Как привести в порядок миллион строк клиентского кода за неделю и не сойти с ума 
+              </h3>
               <p>
                   Алексей Золотых, Wrike
               </p>
               <aside class="notes">
                   Не все могут смотреть в завтрашний день
               </aside>
+          </section>
+          <section>
+            <img src="img/wrike.com.png" alt="">
+          </section>
+          <section>
+              <h2>Про нас</h2>
+              <ul>
+                  <li class="fragment">
+                      2 000 000 строк кода
+                  </li>
+                  <li class="fragment">
+                       Измененные библиотеки под VCS
+                  </li>
+                  <li class="fragment">
+                      50 разработчиков, которые постоянно пишут фичи
+                  </li>
+                  <li class="fragment">
+                      В коде много глобальных переменных
+                  </li>
+              </ul>
           </section>
 					<section data-background-image="img/2.jpg" data-background-color="#322F26">
               <aside class="notes">
@@ -59,33 +79,21 @@
           </section>
           <section data-background-image="img/3.gif" data-background-color="#322F26" >
           </section>
-
           <section>
-              Если не наводить порядок в коде, то код будет запутываться
+              Если не наводить порядок, то код будет запутываться
           </section>
           <section  data-background-video="img/3.mp4"></section>
           <section>
-              <b>Рефа́кторинг</b> &mdash; процесс изменения внутренней структуры программы, <b>не затрагивающий её внешнего поведения </b> и имеющий целью облегчить понимание её работы и также другие бла бла бла, которые никто никогда не читает
+            <img src="img/condom.png" alt="">
+            <h2>Живи полной жизнью</h2>
+            <aside class="notes">
+              Рефакторинг в каком-то смысле защита, инвестиция в будующее
+              С ним ощущения не те <br>
+              Да я успею отрефакторить после релиза <br>
+            </aside>
           </section>
           <section>
-              <h2>
-              принцип КИДАО
-              </h2>
-          </section>
-          <section id="smart">
-              <style>
-               #smart p {
-                   text-align: left;
-               }
-              </style>
-              <h2>
-                  принцип <strike>КИДАО</strike> SMART
-              </h2>
-              <p >S &mdash; Specific (Конкретный)</p>
-              <p >M &mdash; Measurable (Измеримый)</p>
-              <p >A &mdash; Attainable, Achievable (Достижимый)</p>
-              <p >R &mdash; Relevant (Актуальный)</p>
-              <p >T &mdash; Time-bound (Ограниченный во времени)</p>
+              <b>Рефа́кторинг</b> &mdash; процесс изменения внутренней структуры программы, <b>не затрагивающий её внешнего поведения </b> и имеющий целью облегчить понимание её работы и также другие бла бла бла, которые никто никогда не читает
           </section>
 					<section>
 							<h2>Рефакторить фронтенд сложно</h2>
@@ -99,25 +107,32 @@
 								<li class="fragment">Контексты плохо связаны между собой</li>
 						</ul>
 				</section>
-        <section data-background-video="img/csside.mov"></section>
-        <section>
-          <p>Удобно добавлять префикс js- для классов, которые использует javascript</p>
+        <section data-background-video="img/csside.mov">
+           <aside class="notes">
+            <p>Удобно добавлять префикс js- для классов, которые использует javascript</p>
+           </aside>
         </section>
         <section>
           <h1>Острожно!</h1>
-          <p>Не стоит все писать на JS!</p>
+          <p>Не стоит все писать на JS, это может навредить вашему фронтенду!</p>
         </section>
-          <section>
-            <img src="img/grabli.jpg" alt="">
-          </section>
-          <section>
+        <section>
+          <img src="img/grabli.jpg" alt="">
+           <aside class="notes">
+            Женщина с граблями Казимир Малевич 1932  Третьяковская галлерея
+           </aside>
+        </section>
+        <section>
               <h2>Чем чаще, тем меньше проблем</h2>
               <ul>
                   <li class="fragment">Меньше изменений &mdash; меньше ошибок</li>
                   <li class="fragment">Вы всегда в контексте</li>
                   <li class="fragment">Отделу тестирования не нужно тратить много времени</li>
-                  <li class="fragment">Начальство не заметит подвоха</li>
+                  <li class="fragment">Бизнес не заметит подвоха</li>
               </ul>
+          </section>
+          <section>
+            <h2>Часто &mdash; тоже плохо</h2>
           </section>
           <section>
               <img alt="" src="img/5.jpg"/>
@@ -126,49 +141,34 @@
               Как быть, если нужен большой рефакторинг?
           </section>
           <section>
-              <h2>Как я узнал про большой рефакторинг</h2>
-              <ul>
-                  <li class="fragment">
-                      2 000 000 строк кода
-                  </li>
-                  <li class="fragment">
-                       Измененные библиотеки под VCS
-                  </li>
-                  <li class="fragment">
-                      Полсотни разработчиков, которые постоянно пишут фичи
-                  </li>
-                  <li class="fragment">
-                      В коде много глобальных переменных
-                  </li>
-              </ul>
-          </section>
-          <section>
               &mdash; Большой рефакторинг можно заменить на маленький
           </section>
           <section>
-              <h2>Принцип туриста</h2>
-              <p class="fragment" data-fragment-index="0">полянку нужно оставить чище, чем она была</p>
+              <h2>Правило туриста СССР</h2>
+              <p data-fragment-index="0">полянку нужно оставить чище, чем она была</p>
           </section>
           <section>
+            <p>
               &mdash; Давайте договоримся приводить в порядок код постепенно!
-          </section>
-          <section>
+            </p>
+            <p class="fragment">
+              &mdash; Настроим статическую проверку код и внедрим ревью изменений!
+            </p>
+            <p class="fragment">
               &mdash; Будем выделять на это 10% времени и рефакторить
+            </p>
           </section>
           <section data-background-image="img/4.gif" data-background-color="#322F26" >
               <aside class="notes">
                   <p>
                       Обязательно найдется разработчик, который забьет на рефакторинг первым
                   </p>
-                  <p>
-                      Если поставить linter и падать при каждой ошибки - получится АД
-                  </p>
               </aside>
           </section>
           <section>
-              <h2>Решение</h2>
+              <h2>Решение - ДТПП</h2>
               <p class="fragment">
-                  Медленный рефакторинг и добрые туристы по принуждению!
+                  Добрые туристы по принуждению!
               </p>
           </section>
           <section >
@@ -198,9 +198,15 @@
               <p class="fragment">
                   &mdash; Нужен коммит
               </p>
+              <p class="fragment">
+                  &mdash; Мы не можем разрабатывать, все время срабатывают линтеры
+              </p>
               <aside class="notes">
                   А что если постепенный рефакторинг не помогает
               </aside>
+          </section>
+          <section>
+            <h2>Тренировка и еще раз тренировка!</h2>
           </section>
           <section>
             <h2>Рефакторинг, когда поздно пить Боржоми</h2>
@@ -222,52 +228,38 @@
               </ul>
           </section>
           <section>
-              <h2>Встроенные средства для рефакторинга</h2>
-              <ul>
-                  <li class="fragment">Поиск и замена</li>
-                  <li class="fragment">Переименование</li>
-                  <li class="fragment">Перетаскивание мышкой файлов и папок</li>
-              </ul>
-          </section>
-          <section>
-              <h2>Поиск и замена в IDE</h2>
-              <img alt="" src="img/10.png" />
-          </section>
-          <section>
-              <h2>Поиск и замена в IDE</h2>
-              <img alt="" src="img/9.png" />
-          </section>
-          <section id="ide2" data-background-video="img/csside2.mov"></section>
-          <section>
-              <h2>Иногда, в бою, это почти всегда не работает</h2>
-          </section>
-          <section id="ide3" data-background-video="img/csside3.mov"></section>
-          <section  data-background-video="img/ide.mp4"></section>
-          <section>
               <h2>Консоль</h2>
               <p>
                   awk, sed, rm, mv, touch, ag, grep, ack, cat, pbcopy, pbpaste...
               </p>
-              <pre><code data-trim data-noescape>
-#!/bin/bash
-
-
-STATIC_HOST="http://example.com"
-sed -i '' "s|url(\([^)]*\)|url($STATIC_HOST\1|g" style.css
-              </code></pre>
           </section>
           <section>
-                <h2>Есть проблемы</h2>
-              <pre><code data-trim data-noescape>
-...
-background-image : url(/image/test.png);
-background-image : url("/image/test.png");
-background-image : url('/image/test.png');
-...
-              </code></pre>
-              <p class="fragment">
-                  Нужно предусмотреть все варианты
-              </p>
+            <h2>Сравнение скорости поиска</h2>
+            <ul>
+              <li>
+                Поиск с IDE - 20сек
+              </li>
+              <li class="fragment">
+                Grep - CTRL + C после минуты
+              </li>
+              <li class="fragment">Ack - 24сек</li>
+              <li class="fragment">Ripgrep - 5 сек, второй поиск 200 мс (https://goo.gl/5MgKNC)</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Нестандартные задачи</h2>
+            <p>find . -name '*.js' | sed 's/\(.*\)/require("\1");/g'</p>
+          </section>
+          <section>
+            <h2>Формируем index.js</h2>
+            <img src="img/shelltrick.png" alt="">
+          </section>
+          <section>
+            <img src="img/bash.png" alt="">
+          </section>
+          <section>
+                <h2>Все предусмотрели?!</h2>
+                <img src="img/bg.png" alt="">
           </section>
           <section>
               <h2>Отладчик регулярных выражений</h2>
@@ -296,6 +288,33 @@ background-image : url('/image/test.png');
               <li class="frament">Плагины</li>
             </ul>
           </section>
+          <section>
+            <img src="img/grabli.jpg" alt="">
+          </section>
+          <section data-background-image="img/errorscreen.png"> </section>
+
+          <section>
+              <h2>Встроенные средства для рефакторинга</h2>
+              <ul>
+                  <li class="fragment">Поиск и замена</li>
+                  <li class="fragment">Переименование</li>
+                  <li class="fragment">Перетаскивание мышкой файлов и папок</li>
+              </ul>
+          </section>
+          <section>
+              <h2>Поиск и замена в IDE</h2>
+              <img alt="" src="img/10.png" />
+          </section>
+          <section>
+              <h2>Поиск и замена в IDE</h2>
+              <img alt="" src="img/9.png" />
+          </section>
+          <section id="ide2" data-background-video="img/csside2.mov"></section>
+          <section>
+              <h2>Иногда, в бою, это почти всегда не работает</h2>
+          </section>
+          <section id="ide3" data-background-video="img/csside3.mov"></section>
+          <section  data-background-video="img/ide.mp4"></section>
           <section data-background-image="img/idea.png"></section>
           <section>
             <h2>Можно положить настройки от IDEA в репо</h2>
@@ -306,10 +325,7 @@ background-image : url('/image/test.png');
             .idea/inspectionProfiles
             </p>
           </section>
-          <section>
-            <img src="img/grabli.jpg" alt="">
-          </section>
-          <section data-background-image="img/errorscreen.png"> </section>
+
 
 
             <section>
@@ -317,6 +333,9 @@ background-image : url('/image/test.png');
                   Рефакторинг на основе AST
               </h2>
               <p class="fragment">(Абстрактное синтаксическое дерево)</p>
+          </section>
+          <section>
+            <img src="img/ast.png" alt="">
           </section>
           <section>
               <h2>grasp</h2>
@@ -331,7 +350,7 @@ background-image : url('/image/test.png');
               <h3>
               CSS подобный синтаксис
               </h3>
-              <pre class="fragment"><code data-trim data-noescape>
+              <pre style="font-size: 20px" class="fragment"><code data-trim data-noescape>
 $ grasp 'if.test[op=&&]' a.js
 
   2:   if (x && f(x)) { return x; }
@@ -351,27 +370,14 @@ $ grasp -e 'return __ + __' b.js
           </section>
           <section>
               <h2>Рефакторинг</h2>
-              <pre class="fragment"><code data-trim data-noescape>
+              <pre class="fragment"><code style="font-size: 150%" data-trim data-noescape>
 $ cat c.js
- 
   f(x < y, x == z);
-
 $ grasp bi --replace '{{.r}}+{{.l}}' c.js
-
-  f(y+x, z+x);
-              </code></pre>
+  f(y+x, z+x);</code></pre>
               <p class="fragment">
                   Есть  API
               </p>
-              <pre class="fragment"><code data-trim data-noescape>
-var grasp = require('grasp');
-
-var replacer = grasp
-              .replace('equery', '__ + __', '{{.l}} - {{.r}}');
-
-var processedCode = replacer(code);
-              </code></pre>
-
           </section>
           <section>
               <h2>jscodeshift</h2>
@@ -409,6 +415,10 @@ module.exports = function(fileInfo, api) {
               Стили тоже можно рефакторить в AST режиме
           </section>
           <section>
+            <h2>Мой опыт</h2>
+            <p>Stylus → Грязный CSS → Чистый CSS + vars → LESS</p>
+          </section>
+          <section>
               <h2>POSTCSS + plugins</h2>
               <ul>
                   <li class="fragment">Убрать дублирование стилей</li>
@@ -416,6 +426,9 @@ module.exports = function(fileInfo, api) {
                   <li class="fragment">Убрать префиксы</li>
                   <li class="fragment">Выделить новые переменные</li>
               </ul>
+              <p class="fragment">
+                POSTCSS в сборку
+              </p>
           </section>
           <section  data-background-video="img/panic.mp4"></section>
           <section>
@@ -429,9 +442,9 @@ module.exports = function(fileInfo, api) {
               <h2>Gulp</h2>
               <pre class="fragment"><code data-trim data-noescape>
 gulp.task('refactor', function () {
-  return gulp.src('folder/**/*.js') // Нужные файлы для рефакторинга
-    .pipe(RefactoringPlugin()) // Рефакторим код
-    .pipe(gulp.dest('./')) // Кладем на место
+  return gulp.src('folder/**/*.js')
+    .pipe(RefactoringPlugin())
+    .pipe(gulp.dest('./'))
 })
               </code></pre>
           </section>
@@ -441,7 +454,6 @@ gulp.task('refactor', function () {
               <pre class="fragment"><code data-trim data-noescape>
 $ git reset --hard
 $ git merge origin/master
-# Правим код миграции
 $ gulp refactor
               </code></pre>
               </p>
@@ -471,7 +483,7 @@ $ gulp refactor
              <img src="img/cruel.jpg" alt="">
         </section>
         <section>
-          <h2>Иногда менеджеры должны знать чем вы занимаетесь</h2>
+          <h2>Иногда менеджеры должны быть в курсе дел</h2>
         </section>
         <section  data-background-video="img/haha.mp4"></section>
 
