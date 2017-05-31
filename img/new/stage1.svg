@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="307px" height="345px" viewBox="0 0 307 345" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>stage1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="stage1" transform="translate(-6.000000, 0.000000)" fill="#73BD00">
+            <g id="Group-2-Copy" transform="translate(105.000000, 0.000000)">
+                <rect id="Rectangle" x="0" y="0" width="160" height="56"></rect>
+                <g id="Group-4" transform="translate(0.000000, 56.000000)">
+                    <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                </g>
+            </g>
+            <g id="Group-6-Copy" transform="translate(211.730469, 157.171875) rotate(130.000000) translate(-211.730469, -157.171875) translate(131.730469, 115.171875)">
+                <rect id="Rectangle-Copy-2" x="0" y="14" width="160" height="56"></rect>
+                <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="40 0 50 14 30 14"></polygon>
+                <polygon id="Triangle" points="60 0 70 14 50 14"></polygon>
+                <polygon id="Triangle" points="80 0 90 14 70 14"></polygon>
+                <polygon id="Triangle" points="100 0 110 14 90 14"></polygon>
+                <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="20 0 30 14 10 14"></polygon>
+                <g id="Group-Copy" transform="translate(0.000000, 70.000000)">
+                    <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                </g>
+            </g>
+            <g id="Group-6-Copy-2" transform="translate(211.730469, 157.171875) rotate(130.000000) translate(-211.730469, -157.171875) translate(131.730469, 115.171875)">
+                <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="40 3.41060513e-13 50 14 30 14"></polygon>
+                <polygon id="Triangle" points="60 -6.82121026e-13 70 14 50 14"></polygon>
+                <polygon id="Triangle" points="80 -2.27373675e-13 90 14 70 14"></polygon>
+                <polygon id="Triangle" points="100 1.13686838e-13 110 14 90 14"></polygon>
+                <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="20 2.27373675e-13 30 14 10 14"></polygon>
+                <g id="Group-Copy" transform="translate(0.000000, 70.000000)">
+                    <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                </g>
+            </g>
+            <g id="Group-6-Copy-3" transform="translate(211.730469, 157.171875) rotate(130.000000) translate(-211.730469, -157.171875) translate(131.730469, 115.171875)">
+                <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="40 3.41060513e-13 50 14 30 14"></polygon>
+                <polygon id="Triangle" points="60 -6.82121026e-13 70 14 50 14"></polygon>
+                <polygon id="Triangle" points="80 -2.27373675e-13 90 14 70 14"></polygon>
+                <polygon id="Triangle" points="100 1.13686838e-13 110 14 90 14"></polygon>
+                <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                <polygon id="Triangle" points="20 2.27373675e-13 30 14 10 14"></polygon>
+                <g id="Group-Copy" transform="translate(0.000000, 70.000000)">
+                    <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                    <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                </g>
+            </g>
+            <g id="Group-5-Copy" transform="translate(84.742531, 104.555072) rotate(48.000000) translate(-84.742531, -104.555072) translate(4.742531, 62.555072)">
+                <g id="Group-3-Copy">
+                    <rect id="Rectangle-Copy" x="0" y="14" width="160" height="56"></rect>
+                    <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="40 0 50 14 30 14"></polygon>
+                    <polygon id="Triangle" points="60 0 70 14 50 14"></polygon>
+                    <polygon id="Triangle" points="80 0 90 14 70 14"></polygon>
+                    <polygon id="Triangle" points="100 0 110 14 90 14"></polygon>
+                    <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                    <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                    <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="20 0 30 14 10 14"></polygon>
+                    <g id="Group" transform="translate(0.000000, 70.000000)">
+                        <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="Group-5-Copy-2" transform="translate(84.742531, 104.555072) rotate(48.000000) translate(-84.742531, -104.555072) translate(4.742531, 62.555072)">
+                <g id="Group-3-Copy">
+                    <rect id="Rectangle-Copy" x="0" y="14" width="160" height="56"></rect>
+                    <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="40 0 50 14 30 14"></polygon>
+                    <polygon id="Triangle" points="60 0 70 14 50 14"></polygon>
+                    <polygon id="Triangle" points="80 0 90 14 70 14"></polygon>
+                    <polygon id="Triangle" points="100 0 110 14 90 14"></polygon>
+                    <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                    <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                    <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="20 0 30 14 10 14"></polygon>
+                    <g id="Group" transform="translate(0.000000, 70.000000)">
+                        <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="Group-5-Copy-3" transform="translate(84.742531, 234.555072) rotate(48.000000) translate(-84.742531, -234.555072) translate(4.742531, 192.555072)">
+                <g id="Group-3-Copy">
+                    <rect id="Rectangle-Copy" x="0" y="14" width="160" height="56"></rect>
+                    <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="40 0 50 14 30 14"></polygon>
+                    <polygon id="Triangle" points="60 0 70 14 50 14"></polygon>
+                    <polygon id="Triangle" points="80 0 90 14 70 14"></polygon>
+                    <polygon id="Triangle" points="100 0 110 14 90 14"></polygon>
+                    <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                    <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                    <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="20 0 30 14 10 14"></polygon>
+                    <g id="Group" transform="translate(0.000000, 70.000000)">
+                        <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                    </g>
+                </g>
+            </g>
+            <g id="Group-5-Copy-4" transform="translate(234.742531, 264.555072) scale(-1, 1) rotate(48.000000) translate(-234.742531, -264.555072) translate(154.742531, 222.555072)">
+                <g id="Group-3-Copy">
+                    <rect id="Rectangle-Copy" x="0" y="14" width="160" height="56"></rect>
+                    <path d="M3.10862447e-15,14 L10,14 L0,0 L3.55271368e-15,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="40 0 50 14 30 14"></polygon>
+                    <polygon id="Triangle" points="60 0 70 14 50 14"></polygon>
+                    <polygon id="Triangle" points="80 0 90 14 70 14"></polygon>
+                    <polygon id="Triangle" points="100 0 110 14 90 14"></polygon>
+                    <polygon id="Triangle" points="120 0 130 14 110 14"></polygon>
+                    <polygon id="Triangle" points="140 0 150 14 130 14"></polygon>
+                    <path d="M160,14 L150,14 L160,0 L160,14 Z" id="Combined-Shape"></path>
+                    <polygon id="Triangle" points="20 0 30 14 10 14"></polygon>
+                    <g id="Group" transform="translate(0.000000, 70.000000)">
+                        <polygon id="Triangle-Copy" transform="translate(10.000000, 7.000000) scale(1, -1) translate(-10.000000, -7.000000) " points="10 0 20 14 0 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(50.000000, 7.000000) scale(1, -1) translate(-50.000000, -7.000000) " points="50 0 60 14 40 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(70.000000, 7.000000) scale(1, -1) translate(-70.000000, -7.000000) " points="70 0 80 14 60 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(90.000000, 7.000000) scale(1, -1) translate(-90.000000, -7.000000) " points="90 0 100 14 80 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(110.000000, 7.000000) scale(1, -1) translate(-110.000000, -7.000000) " points="110 0 120 14 100 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(150.000000, 7.000000) scale(1, -1) translate(-150.000000, -7.000000) " points="150 0 160 14 140 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(130.000000, 7.000000) scale(1, -1) translate(-130.000000, -7.000000) " points="130 0 140 14 120 14"></polygon>
+                        <polygon id="Triangle-Copy" transform="translate(30.000000, 7.000000) scale(1, -1) translate(-30.000000, -7.000000) " points="30 0 40 14 20 14"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
