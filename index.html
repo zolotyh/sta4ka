@@ -25,6 +25,36 @@
 			.reveal pre code {
 				font-size: 1.8em;
 			}
+      .styles-1 {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+      }
+      .styles-1 > * {
+        -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+      }
 		</style>
 
 		<!-- Printing and PDF exports -->
@@ -379,7 +409,6 @@
 </div>`</code></pre>
 					</section>
           <section data-transition="none">
-            <h3>Проблема 1</h3>
             <pre><code style="font-size: 1.5em" data-trim data-noescape>function template1(){
   let output = <mark>'&lt;div&gt;'</mark>;
   for (let i = 0; i < items.length; i++) {
@@ -392,7 +421,6 @@
             </code></pre>
           </section>
           <section data-transition="none">
-            <h3>Проблема 1</h3>
             <pre><code style="font-size: 1.5em" data-trim data-noescape>function template1(){
   let output = '&lt;div&gt;';
   for (let i = 0; i < items.length; i++) {
@@ -404,25 +432,18 @@
 }
             </code></pre>
           </section>
-          <section data-transition="none">
-            <h3>Проблема 1</h3>
-            <pre><code style="font-size: 1.5em" data-trim>function template1(){
-  let output = '&lt;div&gt;';
-  for (let i = 0; i < items.length; i++) {
-    let item = items[i];
-    output += ...
-  }
-  output += '&lt;/div&gt;';
-  return output;
-}
-            </code></pre>
+          <section>
+          <img src="img/itak.jpeg" alt="">
           </section>
-						<section>
-							<h2>
-									Рефакторинг на основе AST
-							</h2>
-							<p class="fragment">(Абстрактное синтаксическое дерево)</p>
-					</section>
+          <section>
+            <p>Жизнь не обязана быть идеальной, чтобы быть удивительной</p>
+          </section>
+            <section>
+              <h2>
+                  Рефакторинг на основе AST
+              </h2>
+              <p class="fragment">(Абстрактное синтаксическое дерево)</p>
+          </section>
           <section>
             <img src="img/ast.png" alt="">
             <aside class="notes">
@@ -650,10 +671,41 @@ module.exports = function(fileInfo, api) {
 }
               </code></pre>
           </section>
+          <section data-transition="none">
+              <h2>Codemods</h2>
+              <pre><code style="font-size: 1.4em" data-trim data-noescape>
+module.exports = function(<mark>fileInfo</mark>, api) {
+  return api.jscodeshift(fileInfo.source)
+    .findVariableDeclarators('foo')
+    .renameTo('bar')
+    .toSource();
+}
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <h2>Codemods</h2>
+              <pre><code style="font-size: 1.4em" data-trim data-noescape>
+module.exports = function(<mark>fileInfo</mark>, api) {
+  return api.jscodeshift(fileInfo.source)
+    .findVariableDeclarators('foo')
+    .renameTo('bar')
+    <mark>.toSource()</mark>;
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <h2>Codemods</h2>
+              <pre><code style="font-size: 1.4em" data-trim data-noescape>
+module.exports = function(fileInfo, api) {
+  return api.jscodeshift(fileInfo.source)
+    <mark>.findVariableDeclarators('foo')</mark>
+    <mark>.renameTo('bar')</mark>
+    .toSource();
+              </code></pre>
+          </section>
           <section>
               <h2>Готовый сборник рецептов</h2>
               <p>
-              <a href="https://github.com/cpojer/js-codemo">https://github.com/cpojer/js-codemod</a>
+              <a href="https://github.com/cpojer/js-codemod">https://github.com/cpojer/js-codemod</a>
               </p>
               <ul class="fragment">
                   <li>var в const или let.</li>
@@ -662,26 +714,19 @@ module.exports = function(fileInfo, api) {
               </ul>
           </section>
 					<section>
-						<p>А что же с soy?</p>
-					</section>
-					<section data-transition="none">
-						<img src="img/new/60.png" alt="">
-					</section>
-					<section data-transition="none">
-						<img src="img/new/61.png" alt="">
-					</section>
-					<section data-transition="none">
-						<img src="img/new/62.png" alt="">
-					</section>
-					<section data-transition="none">
-						<img src="img/new/63.png" alt="">
-					</section>
-					<section data-transition="none">
-						<img src="img/new/65.png" alt="">
-					</section>
-					<section>
 						<h2>А что же стало с глобальными именами?</h2>
 					</section>
+					<section>
+						<p>
+						script-loader
+						</p>
+					</section>
+          <section>
+            <p>Ваш скрипт выполняется один раз в глобальном контексте</p>
+          </section>
+          <section>
+            eval('Ваш скрипт');
+          </section>
 					<section>
 						<p>
 						script-loader
@@ -690,17 +735,80 @@ module.exports = function(fileInfo, api) {
 					</section>
 					<section>
 						<p>expose-loader</p>
+            <p class="fragment">Добавляет модуль в глобальный конектст</p>
 						<pre class="fragment"><code>require("expose-loader?$!jquery");</code></pre>
 					</section>
 					<section>
 						Пользуйтесь статическими анализаторами кода!
 					</section>
+          <section data-transition="none">
+            <pre><code style="font-size: 1.2em" class="javascript" data-trim data-noescape>
+...
+constructor: function(arguments) {
+  arguments.store = this._escapeValue(arguments.store);
+  $wspace.task.customfields.ComboBoxField.superclass
+    .constructor.call(this, arguments);
+},
+...
+</code></pre>
+          </section>
+          <section data-transition="none">
+            <pre><code style="font-size: 1.2em" class="javascript" data-trim data-noescape>
+...
+constructor: function(<mark>arguments</mark>) {
+  arguments.store = this._escapeValue(arguments.store);
+  $wspace.task.customfields.ComboBoxField.superclass
+    .constructor.call(this, arguments);
+},
+...
+</code></pre>
+          </section>
           <section>
               Стили тоже можно рефакторить в AST режиме
           </section>
           <section>
-            <h2>Мой опыт</h2>
-            <p>Stylus → Грязный CSS → Чистый CSS + vars → LESS</p>
+            <div class="styles-1">
+              <ul>
+              	<li>Stylus</li>
+              	<li>LESS</li>
+              	<li>CSS</li>
+              </ul>
+            <div>→</div>
+            <div>
+            &nbsp;LESS
+            </div>
+            </div>
+          </section>
+          <section data-transition="slide none">
+            <p>Stylus → CSS + комменатрии 
+          </section>
+          <section data-transition="none">
+            <pre><code class="css" data-trim>
+ ...
+color: blue
+}
+/* $$$ file1.stylus */
+.my-awesome-class {
+	color: red;
+....
+            </code></pre>
+          </section>
+          <section data-transition="none">
+<pre><code class="css" data-trim data-noescape>
+ ...
+color: blue
+}
+/* $$$ <mark>file1.stylus</mark> */
+.my-awesome-class {
+	color: red;
+....
+            </code></pre>
+          </section>
+          <section data-transition="slide none" style="text-align: left">
+            <p>Stylus → CSS
+          </section>
+          <section data-transition="none" style="text-align: left">
+            <p>Stylus → CSS → PostCSS
           </section>
           <section>
               <h2>POSTCSS + plugins</h2>
@@ -713,6 +821,18 @@ module.exports = function(fileInfo, api) {
               <p class="fragment">
                 POSTCSS в сборку
               </p>
+          </section>
+          <section data-transition="none" style="text-align: left">
+            <p>Stylus → CSS → PostCSS
+          </section>
+          <section data-transition="none" style="text-align: left">
+            <p>Stylus → CSS → PostCSS → CSS 🔥 
+          </section>
+          <section data-transition="none" style="text-align: left">
+            <p>Stylus → CSS → PostCSS → CSS 🔥 → Less 
+          </section>
+          <section data-transition="none" style="text-align: left">
+            <p>Stylus → CSS → PostCSS → CSS 🔥 → Less 😇
           </section>
           <section  data-background-video="img/panic.mp4"></section>
           <section>
