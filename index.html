@@ -16,6 +16,12 @@
 				background:#000!important;
 				color: #fff!important;
 			}
+			mark.green *, mark.green {
+				background:#73BD00!important;
+			}
+			mark.red *, mark.red {
+				background:#D0011B!important;
+			}
 			.reveal pre code {
 				font-size: 1.8em;
 			}
@@ -35,7 +41,7 @@
 			<div class="slides">
           <section>
               <h3>
-                  Как привести в порядок миллион строк клиентского кода за неделю и не сойти с ума 
+                Рефакторинг клиентского кода или как отрефакторить миллион строк кода и не сойти с ума
               </h3>
               <p>
                   Алексей Золотых, Wrike
@@ -322,16 +328,29 @@
 					</section>
 					<section>
 						<h2>Что делать с soy?</h2>
+            <ul>
+            	<li class="fragment">Собирается в пакетном режиме</li>
+            	<li class="fragment">Шаблоны зависят друг от друга</li>
+            	<li class="fragment">Для сборки нужна java</li>
+            	<li class="fragment">Еще один синтаксиc</li>
+            </ul>
 					</section>
-					<section data-transition="none" data-background-image="img/new/53.png"></section>
 					<section>
 						<p>Пишем плагин для webpack</p>
+            <ul>
+            	<li class="fragment">Плагин собирает файлы пакетно и сохраняет их во временную папку</li>
+            	<li class="fragment">Лоадер берет файлы из временной папки</li>
+            </ul>
 					</section>
 					<section>
             <img src="img/grabli.jpg" alt="">
 					</section>
 					<section>
-						<p>Очень долго и медленно</p>
+            <p>Проблемы</p>
+            <ul>
+            	<li class="fragment">Плагин должен стабильно работать в Windows, Linux, MacOS</li>
+              <li class="fragment">Сборка работает долго</li>
+            </ul>
 					</section>
 					<section>
 						<h2>У вас не будет проблем с soy, если у вас не будет soy</h2>
@@ -341,20 +360,63 @@
 						<h3>Может имеет смысл использовать нативные es шаблоны</h3>
 					</section>
 					<section>
-						<pre><code>t = (title) => '<div>' + title + '</div>'</code></pre>
+            <pre><code>function template(title) { 
+  return '<div>' + title + '</div>'
+}</code></pre>
 					</section>
 					<section data-transition="none">
-						<pre><code data-noescape>t = (title) =><mark>'&lt;div&gt;' + title + '&lt;/div&gt;'</mark></code></pre>
+            <pre><code data-noescape data-trim>function template(title) { 
+  return <mark>'&lt;div&gt;' + title + '&lt;/div&gt;'</mark>
+}
+            </code></pre>
 					</section>
 					<section>
 						<pre><code>`<div>${title}</div>`</code></pre>
 					</section>
 					<section>
-						<h2>А что будет с безопаcностью?</h2>
+            <pre><code>`<div>
+  ${title}
+</div>`</code></pre>
 					</section>
-					<section>
-						<p>Хорошо бы экранировать символы</p>
-					</section>
+          <section data-transition="none">
+            <h3>Проблема 1</h3>
+            <pre><code style="font-size: 1.5em" data-trim data-noescape>function template1(){
+  let output = <mark>'&lt;div&gt;'</mark>;
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+    output += ...
+  }
+  output += <mark>'&lt;/div&gt;'</mark>;
+  return output;
+}
+            </code></pre>
+          </section>
+          <section data-transition="none">
+            <h3>Проблема 1</h3>
+            <pre><code style="font-size: 1.5em" data-trim data-noescape>function template1(){
+  let output = '&lt;div&gt;';
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+    output += <mark>...</mark>
+  }
+  output += '&lt;/div&gt;';
+  return output;
+}
+            </code></pre>
+          </section>
+          <section data-transition="none">
+            <h3>Проблема 1</h3>
+            <pre><code style="font-size: 1.5em" data-trim>function template1(){
+  let output = '&lt;div&gt;';
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+    output += ...
+  }
+  output += '&lt;/div&gt;';
+  return output;
+}
+            </code></pre>
+          </section>
 						<section>
 							<h2>
 									Рефакторинг на основе AST
@@ -388,34 +450,187 @@
               <h3>
               CSS подобный синтаксис
               </h3>
-              <pre style="font-size: 20px" class="fragment"><code data-trim data-noescape>
+          </section>
+          <section data-transition="slide none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
 $ grasp 'if.test[op=&&]' a.js
 
   2:   if (x && f(x)) { return x; }
+  4:   if (x != j) { return 'test'; }
   5:   if (xs.length && ys.length) {
   10:  if (x == 3 && list[x]) {
               </code></pre>
-              <h3 class="fragment">
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp '<mark>if</mark>.test[op=&&]' a.js
+
+  2:   if (x && f(x)) { return x; }
+  4:   if (x != j) { return 'test'; }
+  5:   if (xs.length && ys.length) {
+  10:  if (x == 3 && list[x]) {
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp '<mark>if</mark>.test[op=&&]' a.js
+
+  2:   <mark>if</mark> (x && f(x)) { return x; }
+  4:   <mark>if</mark> (x != j) { return 'test'; }
+  5:   <mark>if</mark> (xs.length && ys.length) {
+  10:  <mark>if</mark> (x == 3 && list[x]) {
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp 'if.<mark>test[op=&&]</mark>' a.js
+
+  2:   if (x && f(x)) { return x; }
+  4:   if (x != j) { return 'test'; }
+  5:   if (xs.length && ys.length) {
+  10:  if (x == 3 && list[x]) {
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp 'if.<mark>test[op=&&]</mark>' a.js
+
+  2:   <mark class="green">if (x && f(x)) { return x; }</mark>
+  4:   if (x != j) { return 'test'; }
+  5:   if (xs.length && ys.length) {
+  10:  if (x == 3 && list[x]) {
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp 'if.<mark>test[op=&&]</mark>' a.js
+
+  2:   <mark class="green">if (x && f(x)) { return x; }</mark>
+  4:   <mark class="red">if (x != j) { return 'test'; }</mark>
+  5:   if (xs.length && ys.length) {
+  10:  if (x == 3 && list[x]) {
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp 'if.<mark>test[op=&&]</mark>' a.js
+
+  2:   <mark class="green">if (x && f(x)) { return x; }</mark>
+  4:   <mark class="red">if (x != j) { return 'test'; }</mark>
+  5:   <mark class="green">if (xs.length && ys.length) {</mark>
+  10:  <mark class="green">if (x == 3 && list[x]) {</mark>
+              </code></pre>
+          </section>
+          <section>
+              <h3>
                   Поиск по шаблонам
               </h3>
-              <pre class="fragment"><code data-trim data-noescape>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
 $ grasp -e 'return __ + __' b.js
 
-  3:  if (x < 2) { return x + 2; }
-  13:      return '>>' + str.slice(2);
+  3:   if (x < 2) { return x + 2; }
+  13:  return '&gt;&gt;' + str.slice(2);
   15:  return f(z) + x;
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp -e '<mark>return __ + __'</mark> b.js
+
+  3:   if (x < 2) { return x + 2; }
+  13:  return '&gt;&gt;' + str.slice(2);
+  15:  return f(z) + x;
+              </code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 1.2em" data-trim data-noescape>
+$ grasp -e '<mark>return __ + __'</mark> b.js
+
+  3:   if (x < 2) { <mark>return x + 2;</mark> }
+  13:  <mark>return '&gt;&gt;' + str.slice(2);</mark>
+  15:  <mark>return f(z) + x;</mark>
               </code></pre>
           </section>
           <section>
               <h2>Рефакторинг</h2>
-              <pre class="fragment"><code style="font-size: 150%" data-trim data-noescape>
-$ cat c.js
-  f(x < y, x == z);
-$ grasp bi --replace '{{.r}}+{{.l}}' c.js
-  f(y+x, z+x);</code></pre>
-              <p class="fragment">
-                  Есть  API
-              </p>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (y < 2) {
+  window.x = y + z;
+}
+</code></pre>
+<pre class="fragment"><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '[left=#y]' --replace 'f({{}})' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (y < 2) {
+  window.x = y + z;
+}
+</code></pre>
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace 'f({{}})' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (<mark class="green">y < 2</mark>) {
+  window.x = y + z;
+}
+</code></pre>
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace 'f({{}})' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (<mark class="green">y < 2</mark>) {
+  <mark class="red">window.x = y + z;</mark>
+}
+</code></pre>
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace 'f({{}})' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (<mark class="green">y < 2</mark>) {
+  <mark class="red">window.x = <mark class="green" style="background: #73BD00!important">y + z;</mark></mark>
+}
+</code></pre>
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace 'f({{}})' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+              <pre><code style="font-size: 150%" data-trim data-noescape>
+if (<mark class="green">y < 2</mark>) {
+  <mark class="red">window.x = <mark class="green" style="background: #73BD00!important">y + z;</mark></mark>
+}
+</code></pre>
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace '<mark>f({{}})</mark>' f.js
+</code></pre>
+          </section>
+          <section data-transition="none">
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace '<mark>f({{}})</mark>' f.js
+</code></pre>
+            <pre><code>if (f(y < 2)) {
+  window.x = f(y + z);
+}</code></pre>
+          </section>
+          <section data-transition="none">
+<pre><code style="font-size: 150%" data-trim data-noescape>
+$ grasp '<mark>[left=#y]'</mark> --replace '<mark>f({{}})</mark>' f.js
+</code></pre>
+            <pre><code data-noescape>if (<mark>f(y < 2)</mark>) {
+  window.x = <mark>f(y + z)</mark>;
+}</code></pre>
           </section>
           <section>
               <h2>jscodeshift</h2>
@@ -426,10 +641,7 @@ $ grasp bi --replace '{{.r}}+{{.l}}' c.js
           </section>
           <section>
               <h2>Codemods</h2>
-              <pre class="fragment"><code data-trim data-noescape>
-/**
- * This replaces every occurence of variable "foo".
- */
+              <pre class="fragment"><code style="font-size: 1.4em" data-trim data-noescape>
 module.exports = function(fileInfo, api) {
   return api.jscodeshift(fileInfo.source)
     .findVariableDeclarators('foo')
